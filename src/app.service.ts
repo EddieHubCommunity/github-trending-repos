@@ -57,21 +57,21 @@ export class AppService {
     console.log(repos, items);
 
     items.map(async (item: any) => {
-      // 3. save Trending results to DB with a date
-      // 3a. check if entry exists, then skip
-      const result = await prisma.trending.findFirst({
+      // 1. save Trending results to DB with a date
+      // check if entry exists for today, then skip
+      const trending = await prisma.trending.findFirst({
         where: {
           type: item.type,
           name: item.name,
           createdAt: `${format(new Date(), 'yyyy-MM-dd')}T00:00:00Z`,
         },
       });
-      if (result) {
+      if (trending) {
         console.log('EXISTS', item.name);
         return;
       }
 
-      // 3b. if doesn't exist save
+      // 2. if trending doesn't exist for today
       console.log('NEW', item.name);
       await prisma.trending.create({
         data: {
@@ -85,9 +85,6 @@ export class AppService {
           createdAt: `${format(new Date(), 'yyyy-MM-dd')}T00:00:00Z`,
         },
       });
-
-      // 4. increment each repo counter
-      // 4a. check if entry exists, if it does increment
     });
 
     return total;
