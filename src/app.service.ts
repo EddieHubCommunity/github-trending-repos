@@ -9,9 +9,12 @@ import { Trending, Prisma } from '@prisma/client';
 export class AppService {
   constructor(private prisma: PrismaService) {}
 
-  async getTrending(): Promise<number> {
+  async getTrending(): Promise<Trending[]> {
+    return this.prisma.trending.findMany({});
+  }
+
+  async saveTrending(): Promise<number> {
     const prisma = this.prisma;
-    const total = 0;
     const repos = { daily: 0, weekly: 0, monthly: 0 };
 
     const items = [];
@@ -87,6 +90,6 @@ export class AppService {
       });
     });
 
-    return total;
+    return items.length;
   }
 }
