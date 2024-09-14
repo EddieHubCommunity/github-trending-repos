@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import { Cron } from '@nestjs/schedule';
 import { format } from 'date-fns';
 import * as cheerio from 'cheerio';
 
@@ -25,7 +26,8 @@ export class AppService {
     });
   }
 
-  async saveTrending(): Promise<number> {
+  @Cron('00 10 * * * *')
+  async refresh(): Promise<number> {
     const prisma = this.prisma;
     const repos = { daily: 0, weekly: 0, monthly: 0 };
 
@@ -73,7 +75,7 @@ export class AppService {
 
     items.map(async (item: any) => {
       // 1. save Trending results to DB with a date
-      // check if entry exists for today, then skip
+      // check if item exists for today, if yes then skip
       const trending = await prisma.trending.findFirst({
         where: {
           type: item.type,
@@ -86,7 +88,7 @@ export class AppService {
         return;
       }
 
-      // 2. if trending doesn't exist for today
+      // 2. if trending item doesn't exist for today
       console.log('NEW', item.name);
       await prisma.trending.create({
         data: {

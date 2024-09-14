@@ -8,7 +8,7 @@ export class AppController {
 
   @Get('refresh')
   refresh(): Promise<number> {
-    return this.appService.saveTrending();
+    return this.appService.refresh();
   }
 
   @Get('/')
