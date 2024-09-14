@@ -1,4 +1,13 @@
-# 0.1.0 (2024-09-14)
+## [0.1.1](https://github.com/EddieHubCommunity/github-trending-repos/compare/v0.1.0...v0.1.1) (2024-09-14)
+
+
+### Bug Fixes
+
+* renamed docker owner ([5219991](https://github.com/EddieHubCommunity/github-trending-repos/commit/5219991afde7cca564766f415998c2655a52de03))
+
+
+
+# [0.1.0](https://github.com/EddieHubCommunity/github-trending-repos/compare/9e8f1b888fb6b9e78cd9bc8431c5c2bd13c14aa2...v0.1.0) (2024-09-14)
 
 
 ### Bug Fixes
