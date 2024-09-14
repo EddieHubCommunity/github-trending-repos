@@ -57,5 +57,5 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/eddiejaoude/trending:v${{ steps.package-version.outputs.current-version }}
-            ghcr.io/eddiejaoude/trending:latest
+            ghcr.io/eddiehubcommunity/trending:v${{ steps.package-version.outputs.current-version }}
+            ghcr.io/eddiehubcommunity/trending:latest
