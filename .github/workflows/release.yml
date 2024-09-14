@@ -6,7 +6,7 @@ on:
 
 jobs:
   changelog:
-    if: github.repository == 'eddiejaoude/github-trending-repos'
+    if: github.repository == 'EddieHubCommunity/github-trending-repos'
     runs-on: ubuntu-latest
 
     steps:
