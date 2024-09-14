@@ -5,7 +5,7 @@ on:
     branches: main
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
 
     strategy:
@@ -20,7 +20,17 @@ jobs:
           app: trending
           token: '${{ secrets.CAPROVER_TOKEN }}'
 
+      - uses: a7ul/tar-action@v1.1.0
+        with:
+          command: c
+          cwd: './'
+          files: |
+            dist/
+            captain-definition
+          outPath: deploy.tar
+
   migrations:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
