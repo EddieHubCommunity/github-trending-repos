@@ -9,8 +9,20 @@ import { Trending, Prisma } from '@prisma/client';
 export class AppService {
   constructor(private prisma: PrismaService) {}
 
-  async getTrending(): Promise<Trending[]> {
-    return this.prisma.trending.findMany({});
+  async getStats(): Promise<any> {
+    return this.prisma.trending.groupBy({
+      by: ['createdAt', 'type'],
+      _count: { id: true },
+    });
+  }
+
+  async getTrending(type: string = 'daily', date: string): Promise<Trending[]> {
+    if (!date) {
+      date = format(new Date(), 'yyyy-MM-dd');
+    }
+    return this.prisma.trending.findMany({
+      where: { type, createdAt: `${format(date, 'yyyy-MM-dd')}T00:00:00Z` },
+    });
   }
 
   async saveTrending(): Promise<number> {

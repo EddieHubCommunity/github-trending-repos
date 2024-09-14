@@ -25,6 +25,7 @@
     "@nestjs/core": "^10.0.0",
     "@nestjs/platform-express": "^10.0.0",
     "@prisma/client": "^5.19.1",
+    "apitoolkit-express": "^2.4.6",
     "cheerio": "^1.0.0",
     "date-fns": "^3.6.0",
     "reflect-metadata": "^0.2.0",

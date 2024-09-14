@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Query } from '@nestjs/common';
 import { AppService } from './app.service';
 import { Trending } from '@prisma/client';
 
@@ -13,6 +13,21 @@ export class AppController {
 
   @Get('/')
   findAll(): Promise<Trending[]> {
-    return this.appService.getTrending();
+    return this.appService.getStats();
+  }
+
+  @Get('/daily')
+  findDaily(@Query('date') date: string): Promise<Trending[]> {
+    return this.appService.getTrending('daily', date);
+  }
+
+  @Get('/weekly')
+  findWeekly(@Query('date') date: string): Promise<Trending[]> {
+    return this.appService.getTrending('weekly', date);
+  }
+
+  @Get('/monthly')
+  findMonthly(@Query('date') date: string): Promise<Trending[]> {
+    return this.appService.getTrending('monthly', date);
   }
 }
