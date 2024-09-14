@@ -1,3 +1,12 @@
+## [0.1.2](https://github.com/EddieHubCommunity/github-trending-repos/compare/v0.1.1...v0.1.2) (2024-09-14)
+
+
+### Bug Fixes
+
+* dev setup ([c23348d](https://github.com/EddieHubCommunity/github-trending-repos/commit/c23348d58fea84c6c4d5639768e0245794dbf82a))
+
+
+
 ## [0.1.1](https://github.com/EddieHubCommunity/github-trending-repos/compare/v0.1.0...v0.1.1) (2024-09-14)
 
 
