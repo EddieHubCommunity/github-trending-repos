@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Logger } from '@nestjs/common';
 import { Cron } from '@nestjs/schedule';
 import { format } from 'date-fns';
 import * as cheerio from 'cheerio';
@@ -8,6 +8,7 @@ import { Trending, Prisma } from '@prisma/client';
 
 @Injectable()
 export class AppService {
+  private readonly logger = new Logger(AppService.name);
   constructor(private prisma: PrismaService) {}
 
   async getStats(): Promise<any> {
@@ -71,7 +72,7 @@ export class AppService {
       }),
     );
 
-    console.log(repos, items);
+    this.logger.log(repos);
 
     items.map(async (item: any) => {
       // 1. save Trending results to DB with a date
@@ -84,12 +85,16 @@ export class AppService {
         },
       });
       if (trending) {
-        console.log('EXISTS', item.name);
+        this.logger.log(
+          `EXISTS: ${item.name} on ${format(new Date(), 'yyyy-MM-dd')}`,
+        );
         return;
       }
 
       // 2. if trending item doesn't exist for today
-      console.log('NEW', item.name);
+      this.logger.log(
+        `NEW: ${item.name} on ${format(new Date(), 'yyyy-MM-dd')}`,
+      );
       await prisma.trending.create({
         data: {
           type: item.type,
