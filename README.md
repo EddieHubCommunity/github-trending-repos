@@ -2,6 +2,8 @@
 
 Is your repo trending on GitHub?
 
+![Web page to UI](https://github.com/user-attachments/assets/c8b97cf1-21ba-4d14-b573-8501aa693d7a)
+
 ## API endpoints
 
 ### Requests
