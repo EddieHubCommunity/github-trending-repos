@@ -1,3 +1,12 @@
+## [0.1.3](https://github.com/EddieHubCommunity/github-trending-repos/compare/v0.1.2...v0.1.3) (2024-09-15)
+
+
+### Bug Fixes
+
+* cron to run once per day only ([68d68c0](https://github.com/EddieHubCommunity/github-trending-repos/commit/68d68c058814ac745d9d733068aec62abd81f4e6))
+
+
+
 ## [0.1.2](https://github.com/EddieHubCommunity/github-trending-repos/compare/v0.1.1...v0.1.2) (2024-09-14)
 
 
