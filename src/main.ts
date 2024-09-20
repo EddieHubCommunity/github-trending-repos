@@ -16,6 +16,7 @@ async function bootstrap() {
   });
 
   app.use(apiToolkitClient.expressMiddleware);
+  app.enableCors();
   await app.listen(3000);
 }
 bootstrap();
