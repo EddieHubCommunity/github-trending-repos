@@ -1,3 +1,12 @@
+## [0.1.4](https://github.com/EddieHubCommunity/github-trending-repos/compare/v0.1.3...v0.1.4) (2024-09-20)
+
+
+### Bug Fixes
+
+* cors ([#23](https://github.com/EddieHubCommunity/github-trending-repos/issues/23)) ([76e0100](https://github.com/EddieHubCommunity/github-trending-repos/commit/76e01007eca794246fe880ca54a2a871e3578dc7))
+
+
+
 ## [0.1.3](https://github.com/EddieHubCommunity/github-trending-repos/compare/v0.1.2...v0.1.3) (2024-09-15)
 
 
