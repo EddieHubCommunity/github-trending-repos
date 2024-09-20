@@ -2,6 +2,8 @@
 
 Is your repo trending on GitHub?
 
+![Web page to UI](https://github.com/user-attachments/assets/c8b97cf1-21ba-4d14-b573-8501aa693d7a)
+
 ## API endpoints
 
 ### Requests
@@ -159,23 +161,25 @@ GET `/daily?2024-09-13`
 ]
 ```
 
+## Requirements
+
+- nodejs
+- postgres
+
 ## Project setup
 
 ```bash
-$ npm install
+$ npm ci
 ```
 
 ## Compile and run the project
 
 ```bash
-# development
-$ npm run start
+# setup db
+npm run db:migrate:dev
 
 # watch mode
 $ npm run start:dev
-
-# production mode
-$ npm run start:prod
 ```
 
 ## Run tests

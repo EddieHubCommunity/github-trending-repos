@@ -27,7 +27,7 @@ export class AppService {
     });
   }
 
-  @Cron('00 10 * * * *')
+  @Cron('00 10 08 * * *')
   async refresh(): Promise<number> {
     const prisma = this.prisma;
     const repos = { daily: 0, weekly: 0, monthly: 0 };
