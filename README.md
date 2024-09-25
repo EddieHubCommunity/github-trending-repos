@@ -16,13 +16,13 @@ For today's trending repos:
 
 Using a specific date:
 
-- `/daily?2024-09-13`
-- `/weekly?2024-09-13`
-- `/monthly?2024-09-13`
+- `/daily?date=2024-09-13`
+- `/weekly?date=2024-09-13`
+- `/monthly?date=2024-09-13`
 
 ### Responses
 
-GET `/daily?2024-09-13`
+GET `/daily?date=2024-09-13`
 
 ```json
 [
