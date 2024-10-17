@@ -22,11 +22,7 @@ export class AppService {
     const yesterday = new Date();
     yesterday.setDate(yesterday.getDate() - 1);
 
-    const year = yesterday.getFullYear();
-    const month = String(yesterday.getMonth() + 1).padStart(2, '0'); // Months are 0-indexed
-    const day = String(yesterday.getDate()).padStart(2, '0');
-
-    const getYesterdaysDate = `${year}-${month}-${day}`;
+    const getYesterdaysDate = format(yesterday, 'yyyy-MM-dd');
 
     this.getTrending('daily', getYesterdaysDate);
   }
