@@ -19,17 +19,16 @@ export class AppService {
     if (stats.length > 0) {
       return stats;
     }
-    const getYesterdaysDate = () => {
-      const yesterday = new Date();
-      yesterday.setDate(yesterday.getDate() - 1);
+    const yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
 
-      const year = yesterday.getFullYear();
-      const month = String(yesterday.getMonth() + 1).padStart(2, '0'); // Months are 0-indexed
-      const day = String(yesterday.getDate()).padStart(2, '0');
+    const year = yesterday.getFullYear();
+    const month = String(yesterday.getMonth() + 1).padStart(2, '0'); // Months are 0-indexed
+    const day = String(yesterday.getDate()).padStart(2, '0');
 
-      return `${year}-${month}-${day}`;
-    };
-    this.getTrending('daily', getYesterdaysDate());
+    const getYesterdaysDate = `${year}-${month}-${day}`;
+
+    this.getTrending('daily', getYesterdaysDate);
   }
 
   async getTrending(type: string = 'daily', date: string): Promise<Trending[]> {
