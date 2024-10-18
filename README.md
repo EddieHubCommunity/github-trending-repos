@@ -164,7 +164,14 @@ GET `/daily?date=2024-09-13`
 ## Requirements
 
 - nodejs
-- postgres
+- postgres (can be run in Docker)
+
+## Running Postgres in Docker (optional)
+To run postgres in docker, run the following command:
+
+```bash
+npm run docker
+```
 
 ## Project setup
 
