@@ -12,10 +12,19 @@ export class AppService {
   constructor(private prisma: PrismaService) {}
 
   async getStats(): Promise<any> {
-    return this.prisma.trending.groupBy({
+    const stats = await this.prisma.trending.groupBy({
       by: ['createdAt', 'type'],
       _count: { id: true },
     });
+    if (stats.length > 0) {
+      return stats;
+    }
+    const yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
+
+    const getYesterdaysDate = format(yesterday, 'yyyy-MM-dd');
+
+    this.getTrending('daily', getYesterdaysDate);
   }
 
   async getTrending(type: string = 'daily', date: string): Promise<Trending[]> {
