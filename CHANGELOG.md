@@ -1,3 +1,12 @@
+## [0.2.1](https://github.com/EddieHubCommunity/github-trending-repos/compare/v0.2.0...v0.2.1) (2024-10-18)
+
+
+### Bug Fixes
+
+* check if there is data ([#28](https://github.com/EddieHubCommunity/github-trending-repos/issues/28)) ([d1cc055](https://github.com/EddieHubCommunity/github-trending-repos/commit/d1cc05577d6c5734599c783b0ac97f9b2f250c00))
+
+
+
 # [0.2.0](https://github.com/EddieHubCommunity/github-trending-repos/compare/v0.1.4...v0.2.0) (2024-10-18)
 
 
@@ -31,15 +40,6 @@
 ### Bug Fixes
 
 * dev setup ([c23348d](https://github.com/EddieHubCommunity/github-trending-repos/commit/c23348d58fea84c6c4d5639768e0245794dbf82a))
-
-
-
-## [0.1.1](https://github.com/EddieHubCommunity/github-trending-repos/compare/v0.1.0...v0.1.1) (2024-09-14)
-
-
-### Bug Fixes
-
-* renamed docker owner ([5219991](https://github.com/EddieHubCommunity/github-trending-repos/commit/5219991afde7cca564766f415998c2655a52de03))
 
 
 
