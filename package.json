@@ -1,6 +1,6 @@
 {
   "name": "github-trending",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "Has your repo been trending on GitHub and you missed it?",
   "author": "Eddie Jaoude",
   "private": true,
